@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :description
       t.integer :price
-      t.boolean :for_sale
+      t.boolean :sold, :default => false 
       t.string :image_url
 
 

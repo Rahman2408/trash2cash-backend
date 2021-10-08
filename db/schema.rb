@@ -26,14 +26,13 @@ ActiveRecord::Schema.define(version: 2021_10_08_020258) do
     t.string "name"
     t.string "description"
     t.integer "price"
-    t.boolean "for_sale"
+    t.boolean "sold", default: false
     t.string "image_url"
   end
 
   create_table "salespoints", force: :cascade do |t|
     t.string "name"
     t.string "site"
-    t.string "logo"
   end
 
   add_foreign_key "item_salespoints", "items"

@@ -3,7 +3,7 @@ class CreateSalespoints < ActiveRecord::Migration[6.1]
     create_table :salespoints do |t|
       t.string :name
       t.string :site
-      t.string :logo
+      
     end
   end
 end

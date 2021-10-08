@@ -4,12 +4,12 @@ one:
   name: MyString
   description: MyString
   price: 
-  for_sale: false
+  sold: false
   image_url: MyString
 
 two:
   name: MyString
   description: MyString
   price: 
-  for_sale: false
+  sold: false
   image_url: MyString

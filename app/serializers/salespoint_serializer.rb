@@ -1,4 +1,4 @@
 class SalespointSerializer < ActiveModel::Serializer
-  attributes :id, :name, :site, :logo
+  attributes :id, :name, :site
   has_many :items
 end
