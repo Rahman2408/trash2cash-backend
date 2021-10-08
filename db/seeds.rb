@@ -11,5 +11,8 @@ Item.create(name: "Coffee Maker", description: "Single-serve coffee machine. Doe
 Item.create(name:'macbook', description:'not selling this yet but maybe', price: 400, for_sale: false, image_url: "https://png.pngitem.com/pimgs/s/133-1333747_transparent-apple-computer-png-apple-macbook-pro-2009.png")
 Item.create(name:'Test Item', description:'test item with no image and forSale attribute also false', price: 400, for_sale: false)
 
-Salespoint.create(name: "Ebay", site: "www.ebay.com", logo: "https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png")
-Salespoint.create(name: "Craigslist", site: "www.craigslist.org", logo: "https://thumbnail.imgbin.com/9/24/0/imgbin-craigslist-inc-soukup-real-estate-services-classified-advertising-sales-anythink-Q6MHEWGZCVSvSqWaKFzbZapWa_t.jpg")
+sPoint = Salespoint.create(name: "Ebay", site: "www.ebay.com", logo: "https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png")
+sPoint2 = Salespoint.create(name: "Craigslist", site: "www.craigslist.org", logo: "https://thumbnail.imgbin.com/9/24/0/imgbin-craigslist-inc-soukup-real-estate-services-classified-advertising-sales-anythink-Q6MHEWGZCVSvSqWaKFzbZapWa_t.jpg")
+
+sPoint.items.push(Item.first)
+sPoint.save
