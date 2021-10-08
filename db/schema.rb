@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_041450) do
+ActiveRecord::Schema.define(version: 2021_10_08_020258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "item_salespoints", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "salespoint_id", null: false
+    t.index ["item_id"], name: "index_item_salespoints_on_item_id"
+    t.index ["salespoint_id"], name: "index_item_salespoints_on_salespoint_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -23,4 +30,12 @@ ActiveRecord::Schema.define(version: 2021_10_04_041450) do
     t.string "image_url"
   end
 
+  create_table "salespoints", force: :cascade do |t|
+    t.string "name"
+    t.string "site"
+    t.string "logo"
+  end
+
+  add_foreign_key "item_salespoints", "items"
+  add_foreign_key "item_salespoints", "salespoints"
 end
