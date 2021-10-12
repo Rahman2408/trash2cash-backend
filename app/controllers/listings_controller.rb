@@ -1,11 +1,11 @@
 class ListingsController < ApplicationController
   def index
-    listings = Listing.all 
+    listings = Listing.all
     render json: listings
   end
 
   def create 
-    # byebug
+    byebug
     listing = Listing.create(listing_params)
     render json: listing 
   end
