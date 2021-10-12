@@ -5,7 +5,6 @@ class ListingsController < ApplicationController
   end
 
   def create 
-    byebug
     listing = Listing.create(listing_params)
     render json: listing 
   end

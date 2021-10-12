@@ -4,7 +4,7 @@ class CreateListings < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :site
 
-    
+      
     end
   end
 end
