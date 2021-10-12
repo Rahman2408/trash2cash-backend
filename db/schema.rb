@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_075955) do
+ActiveRecord::Schema.define(version: 2021_10_12_141112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,21 @@ ActiveRecord::Schema.define(version: 2021_10_12_075955) do
     t.integer "price"
     t.boolean "sold", default: false
     t.string "image_url"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "listings", force: :cascade do |t|
     t.string "name"
     t.string "site"
-    t.bigint "item_id"
-    t.index ["item_id"], name: "index_listings_on_item_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
-  add_foreign_key "listings", "items"
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+  end
+
+  add_foreign_key "items", "users"
+  add_foreign_key "listings", "users"
 end

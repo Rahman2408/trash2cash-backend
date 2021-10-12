@@ -3,7 +3,6 @@ class CreateListings < ActiveRecord::Migration[6.1]
     create_table :listings do |t|
       t.string :name
       t.string :site
-      t.references :item, null: true, foreign_key: true
 
     
     end
