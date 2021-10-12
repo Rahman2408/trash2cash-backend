@@ -10,7 +10,7 @@ item2 = Item.create(name: "HP Laptop", description: "2010 HP Laptop with Windows
 Item.create(name: "Coffee Maker", description: "Single-serve coffee machine. Doesn't use keurig cups.", price: 15, image_url: "https://m.media-amazon.com/images/I/51jpge0lUsL._AC_SL1200_.jpg")
 Item.create(name:'macbook', description:'not selling this yet but maybe', price: 400, sold: true, image_url: "https://png.pngitem.com/pimgs/s/133-1333747_transparent-apple-computer-png-apple-macbook-pro-2009.png")
 
-item1.listings.create(name: "Ebay", site: "www.ebay.com")
-item2.listings.create(name: "Craigslist", site: "www.craigslist.org")
+Listing.create(name: "Ebay", site: "www.ebay.com")
+Listing.create(name: "Craigslist", site: "www.craigslist.org")
 
 
